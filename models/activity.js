@@ -2,13 +2,15 @@
 module.exports = function(sequelize, DataTypes) {
   var Activity = sequelize.define('Activity', {
     description: DataTypes.STRING,
-    measureType: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
+    measure: DataTypes.STRING
+  }, {});
+
+  Activity.associate = function(models) {
+    Activity.hasMany(models.Stat, {
+      as: "Stats",
+      foreignKey: "actId"
+    })
+  }
+
   return Activity;
 };

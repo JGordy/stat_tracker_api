@@ -2,7 +2,7 @@
   "development": {
     "username": "josephgordy",
     "password": null,
-    "database": "stat_tracker-api",
+    "database": "stat_tracker_api",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
